@@ -1,0 +1,42 @@
+.details {
+    text-align: center;
+}
+
+.details-meta {
+    color: #979797;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    margin: 0 auto 15px;
+    text-transform: uppercase;
+
+    & > span {
+        
+        &:not(:last-child) {
+            border-right: 1px solid #979797;
+            margin-right: 5px;
+            padding-right: 5px;
+        }
+    }
+
+    @media ($sm-up) {
+        font-size: 14px;
+    }
+}
+
+@media ($sm-up) {
+    .detailsImg {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .detailsImg-1 {
+        grid-area: aboutImage;
+    }
+
+    .detailsImg-2 {
+        grid-area: reviewsImage;
+    }
+}

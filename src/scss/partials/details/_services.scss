@@ -1,0 +1,24 @@
+.services__list {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.services__item {
+    flex: 0 0 50%;
+    margin: 0 0 10px;
+
+    .fa {
+        color: inherit;
+    }
+
+    @media ($sm-up) {
+        flex: 0 0 21%;
+    }
+}

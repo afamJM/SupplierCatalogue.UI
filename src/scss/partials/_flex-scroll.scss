@@ -1,0 +1,23 @@
+.flexScroll {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+.u-flexScroll-item {
+    
+    &:not(:last-child) {
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 30px;
+    }
+
+    &--card {
+        flex-basis: 132px;
+    }
+
+    &--video {
+        flex-basis: 290px;
+    }
+}

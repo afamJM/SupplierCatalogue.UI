@@ -1,0 +1,26 @@
+.avatar {
+    position: relative;
+    z-index: 1;
+
+    &__img {
+        border: 2px solid #fff;
+        display: block;
+        height: 110px;
+        margin: -55px auto 20px;
+        width: 110px;
+    }
+
+    .btn {
+        max-width: 200px;
+    }
+}
+
+@media ($sm-up) {
+    .avatar-img {
+        border: 2px solid #fff;
+        height: 150px;
+        margin: -50px auto 0;
+        transform: translateY(-15px);
+        width: 150px;
+    }
+}

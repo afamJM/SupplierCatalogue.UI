@@ -1,0 +1,31 @@
+.btn {
+    background-color: #fff;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: inherit;
+    font-weight: 300;
+    margin: 0 auto 1em;
+    max-width: 90vw;
+    padding: 8px 12px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+
+    &--primary {
+        background-color: $colour-purple;
+        border-color: $colour-purple;
+        color: #fff;
+    }
+
+    &--secondary {
+        background-color: $colour-secondary;
+        border-color: $colour-secondary;
+        color: #fff;
+    }
+
+    .fa { color: inherit; }
+
+}

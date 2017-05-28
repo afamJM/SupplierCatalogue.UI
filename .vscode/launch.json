@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 5858,
+            "restart": true,
+            "sourceMaps": true
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch via NPM",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "debug"
+            ],
+            "env": {
+                "API_DEST": "http://localhost:5000",
+                "PORT": "7080",
+                "API_PORT": "5000"
+            },
+            "sourceMaps": true,
+            "address": "localhost",
+            "port": 5858,
+            "protocol": "legacy",
+            "outFiles": [
+                "server.js",
+                "routes.js"
+            ],
+
+            "timeout": 30000
+        }
+    ]
+}

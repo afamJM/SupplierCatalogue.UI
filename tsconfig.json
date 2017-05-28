@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "noEmitOnError": true,
+        "moduleResolution": "classic",
+        "diagnostics": false,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "traceResolution": false,
+
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    },
+    "files": [
+        "server.ts",
+        "routes.ts"
+    ]
+}

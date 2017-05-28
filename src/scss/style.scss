@@ -1,0 +1,371 @@
+@import 'partials/vars';
+
+@import 'partials/buttons';
+@import 'partials/flex-scroll';
+@import 'partials/list';
+@import 'partials/main-menu';
+@import 'partials/reviews';
+@import 'partials/sections';
+@import 'partials/section-nav';
+
+@import 'partials/details/about';
+@import 'partials/details/avatar';
+@import 'partials/details/details';
+@import 'partials/details/faq';
+@import 'partials/details/hero';
+@import 'partials/details/offers';
+@import 'partials/details/services';
+@import 'partials/details/team';
+@import 'partials/details/wedding-fairs';
+
+// Medium CSS - Overview
+// Class parts are written in camelCase
+// Descendants are separated by a single hyphen 
+// Modifiers are separated by two hyphens
+//
+// Terms
+// Component - A distinct, reusable container of controls. e.g. menu, header, footer
+// Descendant - An element that exists under a Component. e.g. menu-title, footer-link
+// Modifier - An adjustment for a specific reason. e.g. menu-title--big, footer-link--lightGrey
+// State - Usually toggled by JavaScript. Adjusts display to describe state. e.g. .btn.is-disabled
+// 
+// Format examples
+// Component: <component> -- e.g. .section, .loginfForm, .btn
+// Component with modifier: <component>[--modifier] -- e.g. .section--highlight, .btn--primary
+// Component and descendant: <component>-<descendant> -- e.g. .section-title, .loginForm-field
+// Component and descendant with modifier: <component>-<descendant>[--modifier] -- e.g. .section-title--big, .btn--secondary--small
+//
+// Helpers and variables
+// State modifiers: <component>.is-StateOfComponent -- e.g. button.is-disabled
+// Variables: $<property>-<value>[--component] -- e.g. $colour-secondary, $colour-border--section
+// Utility classes: u-utilityName -- e.g. section.u-floatLeft, section.u-clearfix, .validationSummary.u-block
+
+
+@font-face {
+    font-family: MontserratLight;
+    src: url('/Fonts/Montserrat-Light.ttf'), url('/Fonts/Montserrat-Light.woff');
+}
+
+* {
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f6f1ee;
+    color: $colour-mediumGrey;
+    font-family: $font-serif--body;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+main {
+    margin-top: 90px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #2f2f2f;
+    font-family: $font-serif--heading;
+    font-weight: inherit;
+    line-height: 1.2;
+    margin: 6px 0 16px;
+
+    a {
+        font-weight: 400;
+    }
+}
+
+h1 {
+    font-size: 3rem; // 48px
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 2.625rem; // 36px
+}
+
+h3 {
+    font-size: 1.875rem; // 30px
+}
+
+h4 {
+    font-size: 1.5rem; // 24px
+}
+
+h5 {
+    font-size: 1.188rem; // 19px
+}
+
+.header--styled {
+    margin-bottom: 40px;
+    text-align: center;
+
+    &:after {
+        border-bottom: 1px solid #2f2f2f;
+        content: ' ';
+        display: block;
+        height: 1px;
+        margin: 20px auto 0;
+        width: 200px;
+    }
+}
+
+p {
+    font-size: 1.188rem; // 19px
+    margin: 6px 0 12px;
+}
+
+a {
+    text-decoration: 0;
+}
+
+.siteHeader {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid colour-border--section;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.siteFooter {
+    width: 100%;
+    background: #fff;
+}
+
+.contentWrapper {
+    width: 970px;
+    padding: 1px 10px 0;
+    margin: 0 auto 50px;
+    position: relative;
+}
+
+.contentInner {
+    width: 970px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.fa {
+    color: brand-colour;
+}
+
+.fa-star,
+.fa-star-half-o {
+    color: #f8b016;
+}
+
+.wrapper {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    max-width: 990px;
+    padding: 0 15px;
+}
+
+.fa-facebook-square {
+    color: #3b5998;
+}
+
+.fa-twitter-square {
+    color: #4099ff;
+}
+
+.fa-instagram {
+    color: #cd486b;
+}
+
+.text-center {
+    text-align: center;
+}
+
+// OFFER CTA
+.offerCta {
+    color: colour-secondary;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin: 10px 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+
+    .fa {
+        color: inherit;
+    }
+}
+
+// LINKS
+.links {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+
+    > a {
+        border-color: colour-border--section;
+        border-style: solid;
+        border-width: 1px 0;
+        color: inherit;
+        flex: 0 0 50%;
+        padding: 10px 0;
+
+        &:first-child {
+            border-right-width: 1px;
+        }
+
+        .fa {
+            font-size: 20px;
+        }
+    }
+
+    .social {
+        flex: 0 0 100%;
+        padding-top: 10px;
+
+        span,
+        a {
+            display: inline-block;
+            line-height: 28px;
+            vertical-align: middle;
+        }
+
+        a {
+            margin-left: 5px;
+        }
+
+        .fa {
+            font-size: 28px;
+        }
+    }
+}
+
+// CARD
+.card {
+    background-color: #fff;
+    color: inherit;
+    display: block;
+    padding: 0 0 10px;
+}
+
+.card__signpost {
+    color: #979797;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card__img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.detailsImg {
+    display: block;
+    max-width: 100%;
+    min-height: 375px;
+}
+
+@media ($md-down) {
+    .hide-sm {
+        display: none;
+    }
+}
+
+@media ($sm-up) {
+    .hide-lg {
+        display: none;
+    }
+
+    .intro {
+        align-items: center;
+        display: grid;
+        grid-column-gap: 30px;  // sass-lint:disable-line no-misspelled-properties
+        grid-template-areas: 'avatar details contact' 'avatar links contact' 'avatar offer contact' 'nav nav nav';
+        grid-template-columns: 210px 1fr 210px;
+        grid-template-rows: 70px 45px 48px 50px;
+        justify-content: center;
+        margin: 30px auto 0;
+        max-width: 1140px;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    .avatar {
+        align-self: start;
+        grid-area: avatar;
+        justify-self: start;
+    }
+
+    .details {
+        grid-area: details;
+    }
+
+    .offerCta {
+        grid-area: offer;
+    }
+
+    .sectionNav {
+        grid-area: nav;
+    }
+
+    .contact {
+        background-color: transparent;
+        grid-area: contact;
+        padding: 0 0 30px;
+
+        .btn {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .links {
+        align-content: center;
+        flex-wrap: nowrap;
+        grid-area: links;
+        justify-content: center;
+
+        > a {
+            border-width: 0 1px 0 0;
+            flex: 0 0 auto;
+            line-height: 28px;
+            margin: 0 10px 0 0;
+            padding: 0 10px 0 0;
+        }
+
+        .social {
+            flex: 0 0 auto;
+            padding-top: 0;
+        }
+    }
+
+    .section--about {
+        grid-area: aboutText;
+        justify-self: end;
+    }
+}
+
+// TEMP HACKS/FIXES
+.rfi {
+    display: none;
+}

@@ -1,0 +1,16 @@
+
+@media ($sm-up) {
+    .reviews-grid {
+        display: grid;
+        grid-template-areas: 'reviewsImage reviewsText';
+        grid-template-columns: 2fr 3fr;
+        margin: 0 auto;
+        max-width: 1140px;
+        padding: 0 20px;
+    }
+
+    .section-reviews {
+        grid-area: reviewsText;
+        justify-self: start;
+    }
+}

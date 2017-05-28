@@ -1,0 +1,34 @@
+.aboutWrapper {
+    margin-bottom: 30px;
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.aboutWrapper-overlay {
+    background-image: linear-gradient(transparent, #fff);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@media ($sm-up) {
+    .aboutWrapper {
+        max-height: auto;
+    }
+
+    .aboutWrapper-overlay {
+        display: none;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-areas: 'aboutText aboutImage';
+        grid-template-columns: 3fr 2fr;
+        margin: 0 auto;
+        max-width: 1140px;
+        padding: 0 20px;
+    }
+}

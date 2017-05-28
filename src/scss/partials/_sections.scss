@@ -1,0 +1,21 @@
+// Medium CSS - component-descendant--modifier format:
+// <component>-<descendant>[--modifier]
+
+.section {
+    padding: 20px 0;
+
+    &-inner {
+        margin: 0 auto;
+        max-width: 1140px;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    &--alt {
+        background-color: $colour-lightGrey;
+    }
+
+    &-heading {
+        text-align: center;
+    }
+}

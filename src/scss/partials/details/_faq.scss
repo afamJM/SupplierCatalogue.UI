@@ -1,0 +1,15 @@
+.faq {
+    border-bottom: 1px solid $colour-border--section;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.faq__question {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.faq__answer {
+    margin: .75em 0 0;
+}
+

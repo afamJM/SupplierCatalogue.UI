@@ -1,0 +1,72 @@
+.siteHeader-mobileBtn {
+    background: none;
+    border: none;
+    margin: 0 15px 0 0;
+    order: 1;
+    padding: 0;
+    width: 24px;
+
+    .bar {
+        background-color: var(--text-colour);
+        display: block;
+        height: 3px;
+        width: 100%;
+    }
+
+    + .bar {
+        margin: 3px 0;
+    }
+}
+
+.siteHeader-logo {
+    margin-right: 30px;
+    order: 2;
+}
+
+.siteHeader-btns {
+    font-size: 18px;
+    margin-left: auto;
+    order: 4;
+
+    button {
+        background: none;
+        border: none;
+        font-size: 16px;
+        margin: 0 0 0 10px;
+        padding: 0;
+    }
+}
+
+
+.siteNav {
+    display: none;
+    flex: 1 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-right: 30px;
+    order: 3;
+    text-transform: uppercase;
+}
+
+.siteNav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.siteNav-link {
+    color: var(--text-colour);
+}
+
+
+@media (min-width: 768px) {
+    .siteHeader-mobileBtn {
+        display: none;
+    }
+
+    .siteNav {
+        display: block;
+    }
+}

@@ -1,0 +1,461 @@
+<div class="hero">
+    <div class="hero__images">
+        {{#each supplier.images}}
+            <img src="{{path}}" alt="{{name}}" class="hero__img" />
+        {{/each}}
+    </div>
+    <a href="#" class="hero__nav hero__nav--prev">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+    <a href="#" class="hero__nav hero__nav--next">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+    <span class="hero__count hide-lg"><span class="fa fa-photo"></span> ({{supplier.images.length}})</span>
+</div>
+
+<div class="intro">
+    <div class="avatar">
+        <img class="avatar-img" src="{{#if supplier.profileImage}}{{supplier.profileImage}}{{else}}{{supplier.coverImage.path}}{{/if}}" alt="{{supplier.business.name}}" width="110px" />
+        <button type="button" class="btn btn--secondary hide-sm">View Photos ({{supplier.images.length}})</button>
+    </div>
+
+    <div class="details">
+        <h1 class="details__name">{{supplier.business.name}}</h1>
+        <div class="details-meta">
+            <span>{{supplier.location.name}}</span>
+            <span>
+                {{stars supplier.starRating}}
+                {{supplier.reviews.length}} Review(s)
+            </span>
+            <span>
+                <span class="fa fa-map-marker"></span>
+                {{supplier.location.county}}
+            </span>
+        </div>
+    </div>
+
+    {{#if supplier.specialOffers.length}}
+        <a href="#offers" class="offerCta">
+            <span class="fa fa-tag"></span>
+            Exclusive special offer for members
+        </a>
+    {{/if}}
+
+    <nav class="sectionNav text-center">
+        <a href="#about" class="sectionNav-link">About</a>
+        {{#if supplier.specialOffers.length}}
+            <a href="#offers" class="sectionNasectionNav-linkv__link">Special Offer</a>
+        {{/if}}
+        <a href="#reviews" class="sectionNav-link">Reviews</a>
+        <a href="#recommendations" class="sectionNav-link">Recommendations</a>
+        <a href="#weddingfairs" class="sectionNav-link">Wedding Fairs</a>
+        <a href="#location" class="sectionNav-link">Location</a>
+    </nav>
+
+    <div class="contact section section--alt">
+        <div class="section-inner">
+            <h2 class="section-heading hide-lg">Availability &amp; Prices</h2>
+            <p class="text-center hide-lg">Contact {{supplier.business.name}} for more details about their availability for your wedding date</p>
+            <a href="#rfi" class="btn btn--primary hide-lg">Request pricing details</a>
+            <a href="#rfi" class="btn btn--primary hide-sm">Contact Supplier</a>
+            <button type="button" class="btn btnShortlist">
+                <span class="btnShortlist__icon fa fa-heart-o"></span>
+                <span class="btnShortlist__txt">Save to shortlist</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="links">
+        {{#if supplier.business.phoneNumbert}}
+            <a href="#">
+                <span class="fa fa-mobile"></span>
+                {{supplier.business.phoneNumbert}}
+            </a>
+        {{/if}}
+        <a href="{{supplier.website}}" target="_blank">
+            <span class="fa fa-globe"></span>
+            Website
+        </a>
+        <div class="social">
+            <span>Follow:</span>
+            <a href="#"><span class="fa fa-facebook-square"></span></a>
+            <a href="#"><span class="fa fa-twitter-square"></span></a>
+            <a href="#"><span class="fa fa-instagram"></span></a>
+        </div>
+    </div>
+</div>
+
+<div class="services section">
+    <div class="section-inner">
+        <h2 class="section-heading">Key Services</h2>
+        <ul class="services__list">
+            <li class="services__item">
+                <span class="fa fa-fw fa-map-marker"></span>
+                National supplier
+            </li>
+            <li class="services__item">
+                <span class="fa fa-fw fa-star-o"></span>
+                Naked cakes
+            </li>
+            <li class="services__item">
+                <span class="fa fa-fw fa-minus-circle"></span>
+                Gluten free
+            </li>
+            <li class="services__item">
+                <span class="fa fa-fw fa-minus-circle"></span>
+                Dairy free
+            </li>
+            <li class="services__item">
+                <span class="fa fa-fw fa-paypal"></span>
+                Accepts PayPal
+            </li>
+            <li class="services__item">
+                <span class="fa fa-fw fa-gbp"></span>
+                Affordable
+            </li>
+            <li class="services__item">
+                <span class="fa fa-fw fa-star-o"></span>
+                Free tastings
+            </li>
+            <li class="services__item">
+                <span class="fa fa-fw fa-taxi"></span>
+                Delivers to venue
+            </li>
+        </ul>
+    </div>
+</div>
+
+{{#if supplier.team.length}}
+    <div class="section">
+        <div class="section-inner">
+            <h2 class="section-heading">Meet the Team</h2>
+            {{#each supplier.team}}
+                <div class="team">
+                    <img class="team__photo" data-original="{{imageUri}}" width="119" height="119" alt="{{title}} {{givenName}} {{familyName}}" />
+                    <div class="team__details">
+                        <h3>{{title}} {{givenName}} {{familyName}}</h3>
+                        <p>{{jobTitle}}</p>
+                    </div>
+                    <a href="#rfi" class="team__contact btn btn--secondary">Contact us for more information</a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
+
+{{#if supplier.faqs.length}}
+    <div class="section">
+        <div class="section-inner">
+            <h2 class="section-heading">Frequently Asked Questions</h2>
+            {{#each supplier.faqs}}
+                <details class="faq" {{#if @first}}open{{/if}}>
+                    <summary class="faq__question">{{question}}</summary>
+                    <p class="faq__answer">{{answer}}</p>
+                </details>
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
+
+<div class="rfi section section--alt">
+    <div class="section-inner">
+        <h2 class="section-heading">Availability &amp; Pricing</h2>
+        <p class="text-center">Contact {{supplier.business.name}} for more details about their availability for your wedding date</p>
+        <form class="rfi__form">
+            <div class="rfi__fields">
+                <div class="rfi__field rfi__field--message">
+                    <label for="message">Message</label>
+                    <textarea name="message">Hi, I found you on hitched and would love more information on your services and pricing.</textarea>
+                </div>
+                <div class="rfi__field rfi__field--firstName">
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" placeholder="First name" />
+                </div>
+                <div class="rfi__field rfi__field--lastName">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" placeholder="Last name" />
+                </div>
+                <div class="rfi__field rfi__field--email">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Email" />
+                </div>
+                <div class="rfi__field rfi__field--date">
+                    <label for="date">Wedding Date</label>
+                    <input type="date" name="date" placeholder="Wedding date" />
+                </div>
+                <div class="rfi__field rfi__field--phone">
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" placeholder="Phone" />
+                </div>
+                <div class="rfi__field rfi__field--checkboxes">
+                    <input type="checkbox" /> Subscribe to the hitched newsletter
+                    <input type="checkbox" /> Subscribe to hitched special offers
+                    <input type="checkbox" /> Subscribe to selected 3rd party emails
+                </div>
+            </div>
+
+            <div class="rfi__btns">
+                <input type="subit" value="Request Pricing Details" class="btn btn--primary" />
+                <button type="button" class="btn btnShortlist">
+                    <span class="btnShortlist__icon fa fa-heart-o"></span>
+                    <span class="btnShortlist__txt">Save to shortlist</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="about-grid">
+    <div id="about" class="section section--about">
+        <div class="section-inner">
+            <h2 class="section-heading">About {{supplier.business.name}}</h2>
+            <div class="aboutWrapper">
+                {{{supplier.description}}}
+                <div class="aboutWrapper-overlay"></div>
+            </div>
+            <button id="aboutBtn" type="button" class="btn hide-lg">Continue Reading</button>
+        </div>
+    </div>
+    {{#if supplier.images.[0].path}}
+        <img data-original="{{supplier.images.[0].path}}" alt="{{supplier.images.[0].path}}" class="detailsImg detailsImg-1" />
+    {{/if}}
+</div>
+
+{{#if supplier.specialOffers.length}}
+    <div id="offers" class="section section--alt text-center">
+        <div class="section-inner">
+            {{#each supplier.specialOffers}}
+                <div class="offer">
+                    <div class="offer__heading">
+                        <img src="/dist/img/exclusive.png" alt="" />
+                        <h2><span class="fa fa-tag"></span> Special Offer</h2>
+                        <h3 class="offer__title">{{name}}</h3>
+                    </div>
+                    <p class="offer__description">{{description}}</p>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
+
+<div class="reviews-grid">
+    {{#if supplier.images.[1].path}}
+        <img data-original="{{supplier.images.[1].path}}" class="detailsImg detailsImg-2" alt="{{supplier.images.[1].name}}" />
+    {{/if}}
+    <div id="reviews" class="section section-reviews">
+        <div class="section-inner">
+            <h2 class="section-heading">Reviews</h2>
+            <a href="#" class="btn btn--primary">Write a review</a>
+            <div class="reviews__container">
+                {{#if supplier.reviews.length}}
+                    {{#each supplier.reviews}}
+                        "Brilliant Team!"
+                        {{stars score}}
+                        {{reviewer.title}} {{reviewer.givenName}} {{reviewer.familyName}}
+                        <p>{{comments}}</p>
+                    {{/each}}
+                {{else}}
+                    <p>This user has no reviews yet :(</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="recommendations" class="section section--alt text-center">
+    <div class="section-inner">
+        <h2 class="section-heading">Recommendations</h2>
+        <p>Our trusted network of suppliers and venues we have worked with</p>
+        <div class="flexScroll">
+            <a href="#" class="card u-flexScroll-item">
+                <img data-original="/dist/img/card.jpg" alt="Laura Ellen Photography" class="card__img">
+                <span class="card__signpost">Photographers</span>
+                <h3 class="card__title">Laura Ellen Photography</h3>
+            </a>
+            <a href="#" class="card u-flexScroll-item">
+                <img data-original="/dist/img/card.jpg" alt="Laura Ellen Photography" class="card__img">
+                <span class="card__signpost">Photographers</span>
+                <h3 class="card__title">Laura Ellen Photography</h3>
+            </a>
+            <a href="#" class="card u-flexScroll-item">
+                <img data-original="/dist/img/card.jpg" alt="Laura Ellen Photography" class="card__img">
+                <span class="card__signpost">Photographers</span>
+                <h3 class="card__title">Laura Ellen Photography</h3>
+            </a>
+            <a href="#" class="card u-flexScroll-item">
+                <img data-original="/dist/img/card.jpg" alt="Laura Ellen Photography" class="card__img">
+                <span class="card__signpost">Photographers</span>
+                <h3 class="card__title">Laura Ellen Photography</h3>
+            </a>
+            <a href="#" class="card u-flexScroll-item">
+                <img data-original="/dist/img/card.jpg" alt="Laura Ellen Photography" class="card__img">
+                <span class="card__signpost">Photographers</span>
+                <h3 class="card__title">Laura Ellen Photography</h3>
+            </a>
+            <a href="#" class="card u-flexScroll-item">
+                <img data-original="/dist/img/card.jpg" alt="Laura Ellen Photography" class="card__img">
+                <span class="card__signpost">Photographers</span>
+                <h3 class="card__title">Laura Ellen Photography</h3>
+            </a>
+            <!-- further cards with prev/next nav -->
+        </div>
+    </div>
+</div>
+
+<div id="vidoes" class="section text-center">
+    <div class="section-inner">
+        <h2 class="section-heading">Video Gallery</h2>
+        <div class="flexScroll">
+            <iframe class="u-flexScroll-item flexScroll__item--video" width="290" height="163" src="https://www.youtube.com/embed/y3CiZhNXT3M" frameborder="0" allowfullscreen></iframe>
+            <iframe class="u-flexScroll-item flexScroll__item--video" width="290" height="163" src="https://www.youtube.com/embed/CubrYp4cuyY" frameborder="0" allowfullscreen></iframe>
+            <iframe class="u-flexScroll-item flexScroll__item--video" width="290" height="163" src="https://www.youtube.com/embed/5iZ5jvEV4hk" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<div id="weddingfairs" class="section section--alt">
+    <div class="section-inner">
+        <h2 class="section-heading">Wedding Fairs</h2>
+        <p class="text-center">Come and meet {{supplier.business.name}} at these upcoming wedding fairs</p>
+
+        <nav class="fairNav text-center">
+            <a href="#" data-month="may" class="fairNav-link">May</a>
+            <a href="#" data-month="june" class="fairNav-link">June</a>
+            <a href="#" data-month="july" class="fairNav-link">July</a>
+        </nav>
+
+        <div data-month="may" class="month month--active">
+            <div class="fair">
+                <div class="fair-calendar">
+                    <div class="fair-month">May 2017</div>
+                    <div class="fair-date">14</div>
+                    <div class="fair-day">Sunday</div>
+                </div>
+                <div class="fair__meta">
+                    <h3 class="fair__venue">Old Thorns Manor Hotel</h3>
+                    <p class="fair__location">
+                        <span class="fa fa-map-marker"></span>
+                        Griggs Green, Liphook, Hampshire, GU30 7PE
+                    </p>
+                </div>
+            </div>
+
+            <div class="fair">
+                <div class="fair-calendar">
+                    <div class="fair-month">May 2017</div>
+                    <div class="fair-date">28</div>
+                    <div class="fair-day">Sunday</div>
+                </div>
+                <div class="fair__meta">
+                    <h3 class="fair__venue">Stansted Park</h3>
+                    <p class="fair__location">
+                        <span class="fa fa-map-marker"></span>
+                        Rowlands Castle, Hampshire, PO9 6DX
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div data-month="june" class="month">
+            <div class="fair">
+                <div class="fair-calendar">
+                    <div class="fair-month">June 2017</div>
+                    <div class="fair-date">1</div>
+                    <div class="fair-day">Sunday</div>
+                </div>
+                <div class="fair__meta">
+                    <h3 class="fair__venue">Bens Flat</h3>
+                    <p class="fair__location">
+                        <span class="fa fa-map-marker"></span>
+                        Flat 20, York Place, Camberley, GU15 4BS
+                    </p>
+                </div>
+            </div>
+
+            <div class="fair">
+                <div class="fair-calendar">
+                    <div class="fair-month">June 2017</div>
+                    <div class="fair-date">8</div>
+                    <div class="fair-day">Sunday</div>
+                </div>
+                <div class="fair__meta">
+                    <h3 class="fair__venue">Hitched HQ</h3>
+                    <p class="fair__location">
+                        <span class="fa fa-map-marker"></span>
+                        Unit 7, Stanhope Gate, Stanhope Road, Camberley
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div data-month="july" class="month">
+            <div class="fair">
+                <div class="fair-calendar">
+                    <div class="fair-month">July 2017</div>
+                    <div class="fair-date">10</div>
+                    <div class="fair-day">Sunday</div>
+                </div>
+                <div class="fair__meta">
+                    <h3 class="fair__venue">Old Thorns Manor Hotel</h3>
+                    <p class="fair__location">
+                        <span class="fa fa-map-marker"></span>
+                        Griggs Green, Liphook, Hampshire, GU30 7PE
+                    </p>
+                </div>
+            </div>
+
+            <div class="fair">
+                <div class="fair-calendar">
+                    <div class="fair-month">July 2017</div>
+                    <div class="fair-date">20</div>
+                    <div class="fair-day">Sunday</div>
+                </div>
+                <div class="fair__meta">
+                    <h3 class="fair__venue">Stansted Park</h3>
+                    <p class="fair__location">
+                        <span class="fa fa-map-marker"></span>
+                        Rowlands Castle, Hampshire, PO9 6DX
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="realweddings" class="section text-center">
+    <div class="section-inner">
+        <h2 class="section-heading">Real Weddings</h2>
+        <p>
+            {{supplier.business.name}} are featured in these members' real weddings
+        </p>
+        <div class="flexScroll">
+            <a href="#" class="card u-flexScroll-item">
+                <img data-original="/dist/img/card.jpg" alt="" class="card__img" />
+                <h3 class="card__title">Sarah &amp; Daniel's Real Wedding</h3>
+            </a>
+            <a href="#" class="card u-flexScroll-item">
+                <img data-original="/dist/img/card.jpg" alt="" class="card__img" />
+                <h3 class="card__title">Sarah &amp; Daniel's Real Wedding</h3>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="location" class="section section--alt text-center">
+    <div class="section-inner">
+        <h2 class="section-heading">Where Can I Find {{supplier.business.name}}?</h2>
+        <p>
+            <span class="fa fa-map-marker"></span>
+            {{#with supplier.business.address}}
+                {{street}}, {{town}}, {{county}}, {{postcode}}
+            {{/with}}
+        </p>
+        {{#with supplier.location.geoCode}}
+        <div id="gmap" class="map" data-lat="{{latitude}}" data-lon="{{longitude}}"></div>
+        {{/with}}
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" defer></script>
+<script src="/dist/js/vendor.js" defer></script>
+<script src="/dist/js/details.js" defer></script>

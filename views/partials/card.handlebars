@@ -1,0 +1,16 @@
+<a href="/suppliers/{{category}}/{{slugify name}}_{{extractId detail}}" class="card card--{{listingType}}">
+    <div class="card__imgWrapper">
+        <img data-original="{{coverImage.path}}" alt="{{#if coverImage.name}}{{coverImage.name}}{{else}}{{name}}{{/if}}" height="170px" class="card__img">
+        <span class="card__imgCount"><span class="fa fa-photo"></span> ({{imageCount}})</span>
+    </div>
+    <div class="card__detailsWrapper">
+        <span class="card__signpost">{{category}}</span>
+        <h2 class="card__title">{{name}}</h2>
+        <span class="card__rating">
+            {{stars starRating}} ({{reviewCount}})
+        </span>
+        <p class="card__details">
+            {{description}}
+        </p>
+    </div>
+</a>

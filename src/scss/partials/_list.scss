@@ -1,0 +1,22 @@
+.card {
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+
+    * {
+        pointer-events: none;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;  // sass-lint:disable-line no-misspelled-properties
+    }
+
+    .card {
+        margin: 0;
+    }
+}

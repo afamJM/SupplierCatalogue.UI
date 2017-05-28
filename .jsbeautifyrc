@@ -1,0 +1,10 @@
+{
+    "end_with_newline": true,
+    "eol": "\n",
+    "max_preserve_newlines": 2,
+    "break_chained_methods": true,
+    "selector_separator_newline": true,
+    "newline_between_rules": true,
+    "space_around_combinator":true,
+    "preserve_newlines": true
+}

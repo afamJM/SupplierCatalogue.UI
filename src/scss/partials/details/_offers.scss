@@ -1,0 +1,30 @@
+.offer__heading {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+
+    img {
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(-110%, -50%);
+    }
+}
+
+.offer {
+
+    h2 {
+        border-bottom: 1px solid #cbc7c4;
+        display: inline-block;
+        padding-bottom: 10px;
+
+        .fa {
+            color: $colour-secondary;
+        }
+    }
+
+    &__title {
+        font-size: 18px;
+        font-style: italic;
+    }
+}

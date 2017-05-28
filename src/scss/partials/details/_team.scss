@@ -1,0 +1,38 @@
+.team {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &:not(:first-child) {
+        margin-top: 15px;
+    }
+
+    @media ($sm-up) {
+        flex-wrap: nowrap;
+    }
+}
+
+.team__photo {
+    border-radius: 100px;
+    flex: 0 0 119px;
+    margin-right: 10px;
+}
+
+.team__details {
+    flex: 0 0 auto;
+
+    @media ($sm-up) {
+        margin-right: 20px;
+    }
+}
+
+.team__contact {
+    flex: 0 0 100%;
+    margin: 10px 0 0;
+
+    @media ($sm-up) {
+        flex: 0 0 310px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,42 @@
+
+<section class="contentWrapper clearfix">
+    <h1 class="header--styled">Wedding Photographers Suppliers</h1>
+    <p class="lead fixed-lead-width">You’ll want to remember your wedding day forever, and a great way to do this is by hiring a fantastic wedding photographer. This section is full of wedding photographers from up and down the country, all offering their own unique service and style.</p>
+
+    <div class="filters verticalSpacing clearfix" id="filterSupplierListings">
+        <span class="filter-label">Filter suppliers by:</span>
+
+        <select name="category" id="category">
+            <option value="#">All suppliers</option>
+        </select>
+
+        <select name="ddlCounty" id="ddlCounty" class="selectField">
+            <option value="0">By location ...</option>
+            <optgroup label="England">
+                <option value="2">Berkshire</option>
+                <option value="13">Hampshire</option>
+                <option value="31">Surrey</option>
+            </optgroup>
+            <optgroup label="Scotland">
+                <option value="107">Edinburgh</option>
+            </optgroup>
+            <optgroup label="Wales">
+                <option value="54">Caerphilly</option>
+                <option value="55">Cardiff</option>
+                <option value="62">Newport</option>
+                <option value="65">Swansea</option>
+                <option value="67">Vale Of Glamorgan</option>
+            </optgroup>
+        </select>
+    </div>
+
+    <div id="results" class="container">
+        {{#if data.suppliers}} {{#each data.suppliers}} {{> card}} {{/each}} {{else}}
+        <h1>No results :(</h1>
+        {{/if}}
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js" defer></script>
+<script src="/dist/js/vendor.js" defer></script>
+<script src="/dist/js/list.js" defer></script>

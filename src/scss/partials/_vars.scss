@@ -1,0 +1,22 @@
+// Medium CSS - variable Format:
+// <property>-<value>[--component]
+
+// Colours
+$colour-purple: #5f387b;
+$colour-secondary: #e57275;
+$colour-border--section: #e3e3e2;
+$colour-darkGrey: #202020;
+$colour-mediumGrey: #4c4c4c;
+$colour-lightGrey: #979797;
+
+// Fonts
+$font-serif--body: 'Noto Serif', serif;
+$font-serif--heading: 'Playfair Display', serif;
+$font-sans--body: 'MontserratLight', sans-serif;
+
+// Media queries
+$sm-up: 'min-width: 481px';
+$md-up: 'min-width: 769px';
+$md-down: 'max-width: 768px';
+$lg-up: 'min-width: 1024px';
+$lg-down: 'max-width: 1023px';
